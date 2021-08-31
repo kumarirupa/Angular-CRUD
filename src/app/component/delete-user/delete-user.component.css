@@ -1,0 +1,10 @@
+.text-primary{
+    color: #5b57b7;
+  }
+  button:first-child{
+    background: #5b57b7;
+    color: #fff;
+  }
+  button:last-child{
+    background: #e1e1e2;
+  }

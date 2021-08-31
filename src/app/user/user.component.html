@@ -1,0 +1,28 @@
+<div fxLayoutAlign="center center" fxFlexFill class="login-section">
+  <mat-card fxFlex="40">
+    <h1 class="text-primary">Add Student</h1>
+    <form fxLayoutAlign="stretch" fxLayout="column" [formGroup]="userForm">
+      <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name">
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Choose Class</mat-label>
+        <mat-select formControlName="class">
+          <mat-option *ngFor="let class of classes" [value]="class.value">
+            {{class.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Percentage</mat-label>
+        <input matInput formControlName="percentage">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Year Pass</mat-label>
+        <input matInput formControlName="year">
+      </mat-form-field>
+      <button mat-raised-button type="submit" (click)="addStudent()" [disabled]="isLoading">Add</button>
+    </form>
+  </mat-card>
+</div>

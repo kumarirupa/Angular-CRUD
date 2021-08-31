@@ -1,0 +1,32 @@
+<mat-spinner diameter="40" *ngIf="loader"></mat-spinner>
+<mat-card class="admin-table-card" *ngIf="allStudentData.length > 0 && !loader">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Sr. No</th>
+                <th>Name</th>
+                <th>Class</th>
+                <th>Percentage</th>
+                <th>Year Pass</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let student of allStudentData;let i=index;">
+                <td>{{i+1}}</td>
+                <td>{{student?.name}}</td>
+                <td>{{student?.standard}}</td>
+                <td>{{student?.percentage}}</td>
+                <td>{{student?.passingYear}}</td>
+                <td>
+                    <mat-icon aria-hidden="false" aria-label="Example icon icon-edit"
+                        [ngStyle]="{'color':'#6b67bd','cursor':'pointer'}" (click)="openDialog(student)">edit</mat-icon>
+                    &nbsp;&nbsp;
+                    <mat-icon aria-hidden="false" aria-label="Example icon icon-delete"
+                        [ngStyle]="{'color':'#c72727','cursor':'pointer'}" (click)="openConfirmDialog(student._id)">
+                        restore_from_trash</mat-icon>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</mat-card>

@@ -1,0 +1,29 @@
+section {
+    display: table;
+  }
+  
+  .example-label {
+    display: table-cell;
+    font-size: 14px;
+    margin-left: 8px;
+    min-width: 120px;
+  }
+  
+  .example-button-row {
+    display: table-cell;
+    width: 490px;
+  }
+  
+  .example-button-row .mat-button-base {
+    margin: 8px 8px 8px 0;
+  }
+  .text-primary{
+    color: #5b57b7;
+  }
+  button:first-child{
+    background: #5b57b7;
+    color: #fff;
+  }
+  button:last-child{
+    background: #e1e1e2;
+  }

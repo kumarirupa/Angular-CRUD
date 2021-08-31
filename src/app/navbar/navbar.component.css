@@ -1,0 +1,26 @@
+.navbar{
+    background: #5b57b7;
+    box-shadow: -1px 1px 3px 0px #6b67bd;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo{
+    width: 65px;
+}
+.btn-logout{
+    background: #fff;
+    width: 100px;
+    height: 40px;
+    border: none;
+    border-radius: 6px;
+}
+.label-name{
+    text-transform: capitalize;
+    margin-right: 15px;
+    font-size: 16px;
+}
+.text-light{
+    color: #fff;
+}

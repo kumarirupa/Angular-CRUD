@@ -1,0 +1,29 @@
+<h2 mat-dialog-title class="text-primary">Edit User</h2>
+<mat-dialog-content class="mat-typography">
+  <form fxLayoutAlign="stretch" fxLayout="column" [formGroup]="editUserForm">
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Choose Class</mat-label>
+      <mat-select formControlName="class">
+        <mat-option *ngFor="let class of classes" [value]="class.value">
+          {{class.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Percentage</mat-label>
+      <input matInput formControlName="percentage">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Year Pass</mat-label>
+      <input matInput formControlName="year">
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-raised-button type="submit" (click)="updateStudent()">Update</button>
+  <button mat-raised-button mat-dialog-close>Cancel</button>
+</mat-dialog-actions>

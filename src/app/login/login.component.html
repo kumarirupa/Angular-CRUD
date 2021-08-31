@@ -1,0 +1,24 @@
+<div fxLayoutAlign="center center" fxFlexFill class="login-section">
+  <mat-card fxFlex="40">
+    <h1 class="text-primary">Sign In</h1>
+    <form fxLayoutAlign="stretch" fxLayout="column" [formGroup]="LoginForm" (ngSubmit)="loginProcess()">
+      <mat-form-field>
+        <mat-label>Username</mat-label>
+        <input matInput formControlName="username">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Password:</mat-label>
+        <input matInput type="password" formControlName="password">
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Choose Option</mat-label>
+        <mat-select formControlName="loginType">
+          <mat-option *ngFor="let admin of admins" [value]="admin.value">
+            {{admin.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <button mat-raised-button type="submit" [disabled]="isLoading">Login</button>
+    </form>
+  </mat-card>
+</div>
